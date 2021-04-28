@@ -1,0 +1,16 @@
+{
+    "name": "Users",
+    "type": "user_params",
+    "scheme": [
+        {"label": "Firstname", "cell_type": "input/text"},
+        {"label": "Lastname", "cell_type": "input/text"},
+        {"label": "Status", "cell_type": "select", "options": [
+            {"label": "ACTIVE", "value": "ACTIVE"},
+            {"label": "INACTIVE", "value": "INACTIVE"}
+        ]},
+        {"label": "IS_ADMIN", "cell_type": "input/checkbox"},
+        {"label": "Téléphone", "cell_type": "input/tel"},
+        {"label": "Mail", "cell_type": "input/email"}
+    ],
+    "more_columns": false
+}

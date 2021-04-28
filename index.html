@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C7 - Admin</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="/css/emeka.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/boxsSelector.css" rel="stylesheet">
+    <link href="/css/drawerContent.css" rel="stylesheet">
+    <link href="/css/modale.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div>Casting7 - Administration</div>
+    </header>
+    <main>
+        <!-- Drawer slider -->
+        <section class="drawer inactive">
+            <!-- Drawer buttons -->
+            <div class="drawer-buttons">
+                <!-- Gear buttons -->
+                <div class="gear-ctn">
+                    <img src="assets/images/cran.svg" alt="cran" class="gearSpinner"/>
+                </div>
+                <!-- Add col buttons -->
+                <div class="open_modale">
+                    <img src="assets/images/add.svg" alt="logo-add-fields">
+                </div>
+                <!-- <div class="addcol-ctn">
+                    <div class="addcol-arrow">
+                        <img src="assets/images/up-arrow.svg" alt="arrow-addcol" class="logo-addCol">
+                    </div>
+                </div> -->
+                <div class="addrow-ctn">
+                    <div class="addrow-arrow">
+                        <img src="assets/images/up-arrow.svg" alt="arrow-addrow" class="logo-addRow">
+                    </div>
+                </div>
+            </div>
+            <!-- Drawer content -->
+            <div class="drawer-content">
+                <h2>Liste des projets en cours :</h2>
+                <ul>
+                    <li>
+                        <a href="#">Projet 1 &rarr;</a>
+                    </li>
+                    <li>
+                        <a href="#">Projet 2 &rarr;</a>
+                    </li>
+                    <li>
+                        <a href="#">Projet 3 &rarr;</a>
+                    </li>
+                    <li>
+                        <a href="#">Projet 4 &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="drawer-chatroom">
+                <h2>Salon / Notes</h2>
+            </div>
+        </section>
+        <section id="modale">
+            <div id="modale-container">
+                <div id="modale-content"></div>
+            </div>
+        </section>
+        <!-- Board navigator -->
+        <div class="head-table custom-scrollbar yellow-scrollbar thin-scrollbar"></div>
+
+        <!-- Board -->
+        <section class="table custom-scrollbar yellow-scrollbar"></section>
+    </main>
+    
+</body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/table-app.mjs" type="modale"></script>
+    <script type="text/javascript" src="/js/main.mjs" type="modale"></script>
+    <script type="text/javascript" src="/js/socket-manage.mjs" type="modale"></script>
+    <script type="text/javascript" src="/js/modale.mjs" type="modale"></script>
+
+</html>

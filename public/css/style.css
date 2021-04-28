@@ -1,0 +1,447 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F4F4F8;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+div.head {
+    background-color: #009FB7;
+}
+
+div.head .room-name {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 500;
+    color: #F4F4F8;
+}
+
+div.head .room-id {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+div.head .room-id::before {
+    content: ' - ';
+    font-size: 32px;
+    font-weight: 500;
+}
+/*
+*   Head sheet    
+*/
+
+
+tbody th {
+    width: 80px;
+}
+tbody td {
+    width: 150px;
+}
+
+/*
+*   Column    
+*/
+td {
+    position: relative;
+    border: 1px solid #E6E6EA;
+    max-width: 100px;
+}
+
+/*
+*   Field active / inactive    
+*/
+div.sheet-cell.active {
+    border: 1px solid blue;
+    /* background: #f0f; */
+}
+
+div.sheet-cell.used {
+    border: 1px solid pink;
+    background: grey;
+}
+
+/*
+*   Fields    
+*/
+div.sheet-cell span,
+div.sheet-cell input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    /* background: white; */
+    outline: transparent;
+}
+
+main .main-table span.used,
+main .main-table input.used,
+main .main-table select.used,
+main .main-table span.inactive,
+main .main-table input.inactive,
+main .main-table select.inactive {
+    display: none;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+}
+
+main {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+/*
+* Section Drawer
+*/
+main .drawer {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #207784;
+    transition: left 0.4s ease-in-out;
+}
+
+/* 
+* drawer active / inactive
+*/
+main .drawer.active {
+    left: 0;
+}
+
+main .drawer.inactive {
+    left: -350px;
+    transition: left 0.4s ease-in-out;
+}
+
+/*
+============ LOGO GEAR ============
+*/
+main .drawer .gear-ctn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .drawer .gear-ctn img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in;
+    animation: spinImg 10s linear infinite;
+
+}
+/* HOVER LOGO GEAR */
+main .drawer .gear-ctn img:hover {
+    animation: spinImg 1s linear infinite;
+}
+
+/*
+************ ANIME SPIN GEAR **************
+*/
+@keyframes spinImg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+============ LOGO ADDCOL ============
+*/
+main .drawer .drawer-buttons .open_modale {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: contrast(0.8);
+}
+
+main .drawer .drawer-buttons .open_modale img {
+    width: 25px;
+    height: 25px;
+}
+
+main .drawer .drawer-buttons .open_modale img:hover {
+    filter: contrast(2);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/*
+============= ADD ROW ============
+*/
+
+
+main .drawer .addcol-ctn,
+main .drawer .addrow-ctn {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: contrast(0.8);
+    z-index: 1;
+}
+
+main .drawer .addcol-ctn {
+    top: 80px;
+}
+
+main .drawer .addrow-ctn {
+    top: 120px;
+}
+
+main .drawer .addcol-ctn .addcol-arrow img,
+main .drawer .addrow-ctn .addrow-arrow img {
+    width: 25px;
+    height: 25px;
+}
+
+main .drawer .addcol-ctn .addcol-arrow img:hover,
+main .drawer .addrow-ctn .addrow-arrow img:hover {
+    filter: contrast(2);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/*
+* Section Table
+*/
+main .table {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: calc(100% - 50px);
+    max-height: calc(100% - 50px);
+    height: calc(100% - 50px);
+    transition: left 0.4s ease-in-out,
+                width 0.4s ease-in-out;
+    display: flex;
+}
+
+/*
+* Head table
+*/
+main .head-table {
+    width: calc(100% - 50px);
+    height: 50px;
+    background-color: #009FB7;
+    border-top: 1px solid #00282E;
+    border-bottom: 1px solid #00282E;
+    box-sizing: border-box;
+    font-size: 0;
+    height: 50px;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    width: calc(100% - 50px);
+    transition: left 0.4s ease-in-out,
+                width 0.4s ease-in-out;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+main .head-table h2 {
+    margin: 0;
+    padding: 10px;
+    /* border-left: 1px solid #00282E; */
+    border-right: 1px dashed #00282E;
+    box-sizing: border-box;
+    color: #F4F4F8;
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    filter: contrast(0.8);
+}
+
+main .head-table h2.current{
+    color: #ddb400;
+}
+
+main .head-table h2:hover {
+    filter: contrast(2);
+    cursor: pointer;
+}
+
+/*
+* Main table
+*/
+main .main-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main .main-table .thead {
+    background-color: #E6E6EA;
+}
+
+main .main-table .thead .c-title {
+    border-bottom: 3px solid #ACACAF;
+    background-color: #E6E6EA;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin: 0;
+}
+
+/*
+* Col
+*/
+main .main-table .col {
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+* Row
+*/
+main .main-table .row {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+* Cell
+*/
+main .main-table .cell {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    width: 100px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #E6E6EA;
+    cursor: pointer;
+}
+
+main .main-table .cell.inactive {
+    border: 1px red solid;
+}
+
+main .main-table .cell.for-select {
+    
+}
+
+main .main-table .cell.for-select select {
+    padding: 5px;
+    border: none;
+}
+
+main .main-table .cell:hover {
+    border: 1px dashed #ddb400;
+}
+
+/*
+*********** column seclector AND col index ***********
+*/
+main .main-table .cell.sheet-selector,
+main .main-table .cell.line-selector,
+main .main-table .cell.tab-line-index,
+main .main-table .cell.tab-line-indexes {
+    min-width: 20px;
+    width: 20px;
+}
+main .main-table .cell.sheet-selector label,
+main .main-table .cell.line-selector label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+main .main-table .line-selector label {
+    border-radius: 50%;
+}
+
+main .main-table .cell.sheet-selector input[type="checkbox"],
+main .main-table .cell.line-selector input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+/*
+* span & input
+*/
+main .main-table span,
+main .main-table input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    outline: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .main-table span {
+    max-width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    margin: 0 5px;
+}
+
+/*
+* Field active / inactive
+*/
+main .main-table span.used,
+input.used {
+    display: none;
+}
+
+main .main-table input.active,
+input.active {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}
+
+main .main-table .cell.active {
+    /* background: #F86060; */
+    opacity: 0.2;
+}
+
+main .main-table .cell.used {
+    border-color: #4AB300;
+}
+
